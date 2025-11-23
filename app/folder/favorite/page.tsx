@@ -9,8 +9,8 @@ export default function FolderPage() {
           お気に入り
         </h1>
         <div className="w-full flex flex-col gap-2">
-          {posts.map((post, index) => (
-            <PostCard key={index} post={post} index={index} />
+          {posts.map((url, index) => (
+            <PostCard key={index} url={url} index={index} />
           ))}
         </div>
       </main>

@@ -1,15 +1,14 @@
 "use client";
 
-import { Post } from "@/app/data/posts";
 import { useEffect, useRef, useState } from "react";
 import PostCardSkeleton from "./PostCardSkeleton";
 
 interface PostCardProps {
-  post: Post;
+  url: string;
   index: number;
 }
 
-export default function PostCard({ post, index }: PostCardProps) {
+export default function PostCard({ url, index }: PostCardProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -29,26 +28,15 @@ export default function PostCard({ post, index }: PostCardProps) {
     }
   }, [isVisible]);
 
-  // Parse HTML to extract blockquote content and convert to JSX
-  const getBlockquoteComponent = (html: string) => {
-    // Extract the lang attribute
-    const langMatch = html.match(/lang="([^"]+)"/);
-    const lang = langMatch ? langMatch[1] : "ja";
-
-    return (
-      <blockquote className="twitter-tweet" data-lang={lang}>
-        <a href={`https://twitter.com/${post.handle.slice(1)}/status/${post.tweetId}`} />
-      </blockquote>
-    );
-  };
-
   if (!isVisible) {
     return <PostCardSkeleton />;
   }
 
   return (
     <div className="w-full flex justify-center" ref={containerRef}>
-      {getBlockquoteComponent(post.html)}
+      <blockquote className="twitter-tweet">
+        <a href={url} />
+      </blockquote>
     </div>
   );
 }
