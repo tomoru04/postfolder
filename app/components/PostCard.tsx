@@ -13,9 +13,7 @@ export default function PostCard({ post }: PostCardProps) {
 
     return (
       <blockquote className="twitter-tweet" data-lang={lang}>
-        <a href={`https://twitter.com/${post.handle.slice(1)}/status/${post.tweetId}`}>
-          View on Twitter
-        </a>
+        <a href={`https://twitter.com/${post.handle.slice(1)}/status/${post.tweetId}`} />
       </blockquote>
     );
   };
