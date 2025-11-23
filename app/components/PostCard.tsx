@@ -32,10 +32,13 @@ export default function PostCard({ url, index }: PostCardProps) {
     return <PostCardSkeleton />;
   }
 
+  // Convert x.com URLs to twitter.com for embed compatibility
+  const twitterUrl = url.replace('x.com', 'twitter.com');
+
   return (
     <div className="w-full flex justify-center" ref={containerRef}>
       <blockquote className="twitter-tweet">
-        <a href={url} />
+        <a href={twitterUrl} />
       </blockquote>
     </div>
   );
