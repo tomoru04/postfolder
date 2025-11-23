@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <header className="w-full bg-white dark:bg-black border-b border-zinc-200 dark:border-zinc-800">
       <div className="flex items-center justify-center px-16 py-8">
-        <Link href="/">
+        <Link href="/folder">
           <Image
             src="/postfolder_logo.png"
             alt="PostFolder logo"
