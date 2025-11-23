@@ -36,4 +36,6 @@ export const posts: Post[] = [
     language: "ja",
     html: '<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">【Zeebraが作ったツイスターゲーム】<br><br>右　手は　赤<br>🔴　🔴　🔴　🔴</p>&mdash; あろっと (@alotofmanyooi) <a href="https://twitter.com/alotofmanyooi/status/1978716576548286726?ref_src=twsrc%5Etfw">October 16, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>',
   },
+  
+  
 ];
